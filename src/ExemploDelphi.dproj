@@ -130,7 +130,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UExVariavelGlobal.pas">
-            <Form>Form1</Form>
+            <Form>FUExVariavelGlobal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

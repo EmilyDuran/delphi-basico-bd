@@ -20,8 +20,8 @@ object FPrincipal: TFPrincipal
   end
   object btn_botao: TButton
     Left = 64
-    Top = 289
-    Width = 89
+    Top = 284
+    Width = 105
     Height = 33
     Caption = 'Exibir mensagem'
     TabOrder = 0
