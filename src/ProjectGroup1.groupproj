@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F90DAF80-5A09-41B5-AB49-229F4D77A1FB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ExemploDelphi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\DELPHI_DB\EX_DB_DELPHI.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ExemploDelphi">
+        <MSBuild Projects="ExemploDelphi.dproj"/>
+    </Target>
+    <Target Name="ExemploDelphi:Clean">
+        <MSBuild Projects="ExemploDelphi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExemploDelphi:Make">
+        <MSBuild Projects="ExemploDelphi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EX_DB_DELPHI">
+        <MSBuild Projects="..\..\DELPHI_DB\EX_DB_DELPHI.dproj"/>
+    </Target>
+    <Target Name="EX_DB_DELPHI:Clean">
+        <MSBuild Projects="..\..\DELPHI_DB\EX_DB_DELPHI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EX_DB_DELPHI:Make">
+        <MSBuild Projects="..\..\DELPHI_DB\EX_DB_DELPHI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ExemploDelphi;EX_DB_DELPHI"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ExemploDelphi:Clean;EX_DB_DELPHI:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ExemploDelphi:Make;EX_DB_DELPHI:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
